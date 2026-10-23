@@ -1,0 +1,213 @@
+{
+ "effacer": [
+  {
+   "x": 170,
+   "y": 946,
+   "w": 390,
+   "h": 72,
+   "debut": 1.15,
+   "fin": 2.5
+  },
+  {
+   "x": 170,
+   "y": 946,
+   "w": 390,
+   "h": 72,
+   "debut": 4.1,
+   "fin": 8.85
+  },
+  {
+   "x": 170,
+   "y": 946,
+   "w": 390,
+   "h": 72,
+   "debut": 9.9,
+   "fin": 10.9
+  },
+  {
+   "x": 170,
+   "y": 946,
+   "w": 390,
+   "h": 72,
+   "debut": 12.4,
+   "fin": 13.4
+  },
+  {
+   "x": 170,
+   "y": 946,
+   "w": 390,
+   "h": 72,
+   "debut": 15.65,
+   "fin": 19.5
+  },
+  {
+   "x": 180,
+   "y": 946,
+   "w": 380,
+   "h": 104,
+   "debut": 8.85,
+   "fin": 9.9
+  },
+  {
+   "x": 180,
+   "y": 946,
+   "w": 380,
+   "h": 104,
+   "debut": 10.9,
+   "fin": 12.4
+  },
+  {
+   "x": 70,
+   "y": 944,
+   "w": 310,
+   "h": 132,
+   "debut": 2.5,
+   "fin": 4.1
+  },
+  {
+   "x": 190,
+   "y": 964,
+   "w": 380,
+   "h": 146,
+   "debut": 13.4,
+   "fin": 15.65
+  }
+ ],
+ "fin": 19.5,
+ "zoom": 0.08,
+ "whoosh": true,
+ "legendes": [
+  {
+   "t": 1.2,
+   "texte": "LE NETTOYAGE QUI"
+  },
+  {
+   "t": 2.5,
+   "lignes": [
+    "CANAPÉ",
+    "MATELAS"
+   ],
+   "decalage": [
+    0,
+    0.9
+   ],
+   "jaune": [
+    "CANAPÉ",
+    "MATELAS"
+   ]
+  },
+  {
+   "t": 4.15,
+   "texte": "DIRECTEMENT CHEZ VOUS",
+   "jaune": [
+    "CHEZ",
+    "VOUS"
+   ]
+  },
+  {
+   "t": 4.95,
+   "texte": "EN MARTINIQUE",
+   "jaune": [
+    "MARTINIQUE"
+   ]
+  },
+  {
+   "t": 5.95,
+   "texte": "ON ARRIVE AVEC"
+  },
+  {
+   "t": 6.45,
+   "texte": "NOTRE MATÉRIEL",
+   "jaune": [
+    "MATÉRIEL"
+   ]
+  },
+  {
+   "t": 7.45,
+   "texte": "ET ON S'OCCUPE"
+  },
+  {
+   "t": 8.2,
+   "texte": "DE TOUT SUR PLACE",
+   "jaune": [
+    "SUR",
+    "PLACE"
+   ]
+  },
+  {
+   "t": 8.9,
+   "lignes": [
+    "ASPIRATION",
+    "EN PROFONDEUR"
+   ],
+   "jaune": [
+    "ASPIRATION"
+   ]
+  },
+  {
+   "t": 9.95,
+   "texte": "DÉTACHAGE",
+   "jaune": [
+    "DÉTACHAGE"
+   ]
+  },
+  {
+   "t": 10.95,
+   "lignes": [
+    "SHAMPOING",
+    "DÉSODORISATION"
+   ],
+   "decalage": [
+    0,
+    0.3
+   ],
+   "jaune": [
+    "SHAMPOING",
+    "DÉSODORISATION"
+   ]
+  },
+  {
+   "t": 12.45,
+   "texte": "RÉSULTAT :"
+  },
+  {
+   "t": 13.45,
+   "lignes": [
+    "TISSUS ASSAINIS",
+    "COULEURS RAVIVÉES"
+   ],
+   "decalage": [
+    0,
+    0.5
+   ],
+   "jaune": [
+    "ASSAINIS",
+    "RAVIVÉES"
+   ]
+  },
+  {
+   "t": 15.7,
+   "texte": "UNE MAISON QUI"
+  },
+  {
+   "t": 16.2,
+   "texte": "SENT LE FRAIS",
+   "jaune": [
+    "FRAIS"
+   ]
+  },
+  {
+   "t": 16.7,
+   "texte": "RÉSERVEZ SUR NOTRE"
+  },
+  {
+   "t": 18.2,
+   "texte": "LIEN EN BIO",
+   "jaune": [
+    "LIEN",
+    "EN",
+    "BIO"
+   ]
+  }
+ ]
+}
