@@ -12,7 +12,7 @@ const SITE = {
 
     // Coordonnées pour recevoir les demandes de devis.
     // Laisse "" si tu ne veux pas utiliser l'un des deux.
-    email: "",              // ex : "contact@linstantreel.fr"
+    email: "chrysta.bd@gmail.com",
     whatsapp: "",           // ex : "596696123456" (indicatif sans le +, sans espaces)
     instagram: "",          // ex : "https://instagram.com/linstantreel"
 

@@ -100,7 +100,7 @@ function afficherContact() {
 
     const boutons = [];
     if (SITE.whatsapp) boutons.push('<button type="submit" class="btn btn-gold" data-via="whatsapp">Envoyer par WhatsApp</button>');
-    if (SITE.email) boutons.push('<button type="submit" class="btn btn-outline" data-via="email">Envoyer par e-mail</button>');
+    if (SITE.email) boutons.push(`<button type="submit" class="btn ${SITE.whatsapp ? "btn-outline" : "btn-gold"}" data-via="email">Envoyer par e-mail</button>`);
     if (boutons.length === 0) {
         form.hidden = true;
         document.getElementById("form-title").hidden = true;
