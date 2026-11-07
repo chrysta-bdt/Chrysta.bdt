@@ -43,8 +43,8 @@ const FORMULES = [
         montages: 2,
         moments: ["Préparatifs", "Cérémonie", "Shooting couple"],
         videos: [
-            { src: "videos/trend-mariee.mp4", poster: "posters/trend-mariee.jpg", titre: "Avant, après : la mariée", couple: "Trend", lieu: "" },
             { src: "videos/film-4.mp4", poster: "posters/film-4.jpg", titre: "Le oui à la mairie", couple: "Djeremy & Kathleen", lieu: "Martinique · octobre 2026" },
+            { src: "videos/film-3.mp4", poster: "posters/film-3.jpg", titre: "Le mariage civil", couple: "Maud & Ruben", lieu: "Martinique · août 2026" },
         ],
     },
     {
@@ -56,9 +56,9 @@ const FORMULES = [
         montages: 3,
         moments: ["Préparatifs", "Cérémonie religieuse ou laïque", "Shooting vidéo couple", "Réception"],
         videos: [
-            { src: "videos/trend-mariee.mp4", poster: "posters/trend-mariee.jpg", titre: "Avant, après : la mariée", couple: "Trend", lieu: "" },
-            { src: "videos/spontane-demoiselles.mp4", poster: "posters/spontane-demoiselles.jpg", titre: "La mariée et ses demoiselles", couple: "Trend", lieu: "" },
-            { src: "videos/film-1.mp4", poster: "posters/film-1.jpg", titre: "Cérémonie et réception", couple: "Brice & Audrey", lieu: "octobre 2025" },
+            { src: "videos/trend-mariee.mp4", poster: "posters/trend-mariee.jpg", titre: "Trend · Avant, après : la mariée", couple: "Giovanna & Maxime", lieu: "Martinique · juillet 2026" },
+            { src: "videos/trend-marie.mp4", poster: "posters/trend-marie.jpg", titre: "Trend · Le marié et sa team", couple: "Giovanna & Maxime", lieu: "Martinique · juillet 2026" },
+            { src: "videos/film-5.mp4", poster: "posters/film-5.jpg", titre: "Le film : toute la journée", couple: "Giovanna & Maxime", lieu: "Martinique · juillet 2026" },
         ],
         populaire: true,
     },
@@ -78,9 +78,9 @@ const FORMULES = [
         ],
         videos: [
             { src: "videos/trend-hommes.mp4", poster: "posters/trend-hommes.jpg", titre: "Les hommes d'honneur", couple: "Trend", lieu: "" },
-            { src: "videos/trend-marie.mp4", poster: "posters/trend-marie.jpg", titre: "Le marié et sa team", couple: "Trend", lieu: "" },
             { src: "videos/trend-mari.mp4", poster: "posters/trend-mari.jpg", titre: "« Je reste avec mon mari »", couple: "Trend", lieu: "" },
-            { src: "videos/film-5.mp4", poster: "posters/film-5.jpg", titre: "Toute la journée", couple: "Giovanna & Maxime", lieu: "Martinique · juillet 2026" },
+            { src: "videos/spontane-demoiselles.mp4", poster: "posters/spontane-demoiselles.jpg", titre: "La mariée et ses demoiselles", couple: "Trend", lieu: "" },
+            { src: "videos/hero.mp4", poster: "posters/film-7.jpg", titre: "La cérémonie au jardin", couple: "Kelia & Jose", lieu: "" },
         ],
     },
 ];
