@@ -68,10 +68,17 @@ function afficherFormule() {
 
     const reels = [];
     for (let i = 0; i < f.montages; i++) {
-        const src = f.videos[i];
+        const v = typeof f.videos[i] === "string" ? { src: f.videos[i] } : f.videos[i];
         reels.push(
-            src
-                ? `<div class="reel"><video src="${src}" controls playsinline preload="metadata"></video></div>`
+            v
+                ? `<figure class="reel-bloc">
+                    <div class="reel"><video src="${v.src}"${v.poster ? ` poster="${v.poster}"` : ""} controls playsinline preload="none"></video></div>
+                    <figcaption>
+                        ${v.titre ? `<strong>${echapper(v.titre)}</strong>` : ""}
+                        ${v.couple ? `<span>${echapper(v.couple)}</span>` : ""}
+                        ${v.lieu ? `<small>${echapper(v.lieu)}</small>` : ""}
+                    </figcaption>
+                   </figure>`
                 : `<div class="reel reel-vide"><span class="play">&#9654;</span><span>Réel ${i + 1}</span><small>à venir</small></div>`
         );
     }
