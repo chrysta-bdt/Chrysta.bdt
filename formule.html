@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formule — L'Instant Réel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <a href="index.html" class="logo" data-site-nom>L'Instant Réel</a>
+        <nav>
+            <a href="index.html#formules">Formules</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main id="formule-page">
+        <section class="formule-hero">
+            <a href="index.html#formules" class="back">&larr; Toutes les formules</a>
+            <p class="eyebrow">Formule</p>
+            <h1 id="f-nom"></h1>
+            <p class="f-prix" id="f-prix"></p>
+            <p class="lead" id="f-accroche"></p>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title" id="f-titre-reels"></h2>
+            <p class="section-sub">Voici des exemples de réels livrés le jour J avec cette formule.</p>
+            <div class="reels-grid" id="f-reels"></div>
+        </section>
+
+        <section class="section">
+            <div class="card inclus">
+                <h3>Ce qui est inclus</h3>
+                <ul id="f-inclus" class="check-list"></ul>
+            </div>
+        </section>
+
+        <section class="section cta">
+            <h2>Cette formule vous plaît&nbsp;?</h2>
+            <a id="f-cta" href="contact.html" class="btn btn-gold btn-lg">
+                Je suis intéressé(e) par cette formule — je souhaite un devis ou un rendez-vous
+            </a>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 <span data-site-nom>L'Instant Réel</span> — Martinique</p>
+        <p class="footer-links" id="footer-links"></p>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="site.js"></script>
+    <script>afficherFormule();</script>
+</body>
+</html>
