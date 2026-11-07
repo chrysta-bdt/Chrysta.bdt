@@ -5,34 +5,40 @@
 
 const SITE = {
     nom: "L'Instant Réel",
-    slogan: "Vos plus beaux moments, livrés en réels le jour J",
+    metier: "Créatrice de contenu mariage",
 
-    // Coordonnées pour recevoir les demandes de devis / rendez-vous.
+    // Lien pour réserver un appel découverte
+    rdv: "https://cal.com/l-instant.reel/appel-decouverte",
+
+    // Coordonnées pour recevoir les demandes de devis.
     // Laisse "" si tu ne veux pas utiliser l'un des deux.
     email: "",              // ex : "contact@linstantreel.fr"
     whatsapp: "",           // ex : "596696123456" (indicatif sans le +, sans espaces)
     instagram: "",          // ex : "https://instagram.com/linstantreel"
+
+    // Informations affichées sous les formules
+    zones: "Martinique • Guadeloupe • Partout dans le monde",
+    infos: [
+        "Heure supplémentaire : 60 €",
+        "Déplacements hors Martinique sur devis",
+    ],
 };
 
 /*  Les 3 formules, de la moins chère à la plus chère.
-    - prix : laisse "" pour afficher « Sur devis »
-    - reels : nombre de réels livrés le jour J
-    - inclus : ce que la personne reçoit
+    - montages : nombre de réels livrés
+    - moments : ce qui est filmé
     - videos : chemins vers tes réels (fichiers .mp4 dans le dossier videos/)
-      S'il y a moins de vidéos que de réels, un emplacement « Réel à venir » s'affiche.
+      S'il y a moins de vidéos que de montages, un emplacement « Réel à venir » s'affiche.
 */
 const FORMULES = [
     {
         id: "intime",
         nom: "Intime",
-        accroche: "L'essentiel de votre journée, en toute simplicité.",
-        prix: "",
-        reels: 2,
-        inclus: [
-            "2 réels montés et livrés le jour J",
-            "Format vertical prêt pour Instagram et TikTok",
-            "Musique tendance au choix",
-        ],
+        prix: "240 €",
+        tauxHoraire: "60 € / h",
+        presence: "4 h de présence",
+        montages: 2,
+        moments: ["Préparatifs", "Cérémonie", "Shooting couple"],
         videos: [
             // "videos/intime-1.mp4",
             // "videos/intime-2.mp4",
@@ -41,30 +47,27 @@ const FORMULES = [
     {
         id: "signature",
         nom: "Signature",
-        accroche: "Les moments forts de votre journée, racontés avec style.",
-        prix: "",
-        reels: 4,
-        inclus: [
-            "4 réels montés et livrés le jour J",
-            "Format vertical prêt pour Instagram et TikTok",
-            "Musique tendance au choix",
-            "Toutes les vidéos brutes envoyées",
-        ],
+        prix: "480 €",
+        tauxHoraire: "60 € / h",
+        presence: "8 h de présence",
+        montages: 3,
+        moments: ["Préparatifs", "Cérémonie religieuse ou laïque", "Shooting vidéo couple", "Réception"],
         videos: [],
         populaire: true,
     },
     {
         id: "eternite",
         nom: "Éternité",
-        accroche: "Une couverture complète pour revivre chaque instant.",
-        prix: "",
-        reels: 6,
-        inclus: [
-            "6 réels montés et livrés le jour J",
-            "Format vertical prêt pour Instagram et TikTok",
-            "Musique tendance au choix",
-            "Toutes les vidéos brutes envoyées",
-            "Présence de la préparation jusqu'à la soirée",
+        prix: "720 €",
+        tauxHoraire: "60 € / h",
+        presence: "12 h de présence",
+        montages: 4,
+        moments: [
+            "Préparatifs",
+            "Cérémonie civile (captation) et cérémonie religieuse",
+            "Shooting vidéo couple",
+            "Réception",
+            "Lancer de bouquet",
         ],
         videos: [],
     },

@@ -447,3 +447,53 @@ a { color: inherit; text-decoration: none; }
     .reels-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
     .card { padding: 24px; }
 }
+
+/* ---------- Ajouts tarifs 2027 ---------- */
+.formule-taux {
+    font-size: 0.85rem;
+    color: var(--gris);
+    margin-top: -6px;
+}
+
+.infos-pratiques {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--gris);
+    font-size: 0.9rem;
+}
+
+.infos-pratiques .zones {
+    color: var(--or-fonce);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    justify-content: center;
+}
+
+.cta .section-sub { margin: 0 0 24px; }
+
+.rdv-card {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.rdv-card h3 { font-size: 1.8rem; }
+
+.rdv-card p {
+    color: var(--gris);
+    margin: 6px 0 20px;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+[hidden] { display: none !important; }

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Devis ou rendez-vous — L'Instant Réel</title>
+    <title>Contact — L'Instant Réel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,24 +13,26 @@
     <header class="navbar">
         <a href="index.html" class="logo" data-site-nom>L'Instant Réel</a>
         <nav>
-            <a href="index.html#formules">Formules</a>
+            <a href="index.html#formules">Tarifs</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <main class="section narrow">
         <p class="eyebrow center">Contact</p>
-        <h1 class="page-title">Demande de devis ou de rendez-vous</h1>
+        <h1 class="page-title">Parlons de votre mariage</h1>
+
+        <div class="card rdv-card">
+            <h3>Réserver un appel découverte</h3>
+            <p>Choisissez directement un créneau dans mon agenda.</p>
+            <a href="#" data-rdv target="_blank" rel="noopener" class="btn btn-gold">Choisir un créneau</a>
+        </div>
+
+        <h2 class="form-title" id="form-title">Ou demandez un devis</h2>
 
         <form id="contact-form" class="card form">
             <label>Formule
                 <select name="formule" id="c-formule"></select>
-            </label>
-            <label>Je souhaite
-                <select name="demande">
-                    <option>Un devis</option>
-                    <option>Un rendez-vous</option>
-                </select>
             </label>
             <label>Nom et prénom
                 <input name="nom" required autocomplete="name">
@@ -38,11 +40,14 @@
             <label>Téléphone
                 <input name="tel" type="tel" autocomplete="tel">
             </label>
-            <label>Date de l'événement
+            <label>Date du mariage
                 <input name="date" type="date">
             </label>
+            <label>Lieu
+                <input name="lieu" placeholder="Martinique, Guadeloupe, autre…">
+            </label>
             <label>Message
-                <textarea name="message" rows="4" placeholder="Type d'événement, lieu, questions…"></textarea>
+                <textarea name="message" rows="4" placeholder="Vos envies, vos questions…"></textarea>
             </label>
             <div class="form-actions" id="c-actions"></div>
             <p class="form-note" id="c-note"></p>
