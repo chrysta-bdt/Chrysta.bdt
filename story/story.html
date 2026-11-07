@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { width: 1080px; height: 1920px; overflow: hidden; font-family: 'Montserrat', sans-serif; }
+    .story {
+        position: relative; width: 1080px; height: 1920px;
+        background: url('../posters/film-5.jpg') center 30% / cover;
+        color: #4a3438;
+    }
+    .story::before {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(180deg,
+            rgba(253,243,244,0) 0%, rgba(253,243,244,0) 30%,
+            rgba(246,220,225,0.85) 45%, rgba(253,243,244,0.97) 58%, #fdf3f4 100%);
+    }
+    .content { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; }
+
+    .marque {
+        margin-top: 150px;
+        padding: 14px 40px; border-radius: 999px;
+        background: rgba(253,243,244,0.88);
+        font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 52px;
+        color: #9c7a2e;
+    }
+    .metier {
+        margin-top: 14px; padding: 8px 26px; border-radius: 999px;
+        background: rgba(253,243,244,0.8);
+        font-size: 22px; letter-spacing: 6px; text-transform: uppercase; font-weight: 600; color: #c9798b;
+    }
+
+    .bas { position: absolute; top: 820px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+
+    h1 {
+        font-family: 'Cormorant Garamond', serif; font-weight: 600;
+        font-size: 96px; line-height: 1.02;
+    }
+    h1 em {
+        font-style: italic;
+        background: linear-gradient(120deg, #9c7a2e, #d9b65e 50%, #9c7a2e);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .sous { margin-top: 22px; font-size: 30px; color: #8a7175; }
+
+    .collections { margin-top: 46px; display: flex; gap: 22px; }
+    .col {
+        width: 290px; padding: 26px 10px 24px; border-radius: 26px;
+        background: #fff; border: 2px solid #f6dce1;
+        box-shadow: 0 12px 30px rgba(201,121,139,0.18);
+    }
+    .col.star { border-color: #c9a14a; }
+    .col .nom { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 600; }
+    .col .prix { font-family: 'Cormorant Garamond', serif; font-size: 40px; color: #9c7a2e; font-weight: 600; }
+    .col .det { margin-top: 6px; font-size: 21px; color: #8a7175; line-height: 1.45; }
+
+    .appel { margin-top: 56px; font-family: 'Cormorant Garamond', serif; font-size: 58px; font-weight: 600; }
+    .appel em { font-style: italic; color: #c9798b; }
+    .fleche { margin-top: 16px; font-size: 26px; letter-spacing: 5px; text-transform: uppercase; font-weight: 600; color: #9c7a2e; }
+    .fleche span { display: block; font-size: 60px; line-height: 1; margin-top: 6px; letter-spacing: 0; }
+
+    /* Zone vide pour le sticker lien Instagram : environ y 1560 → 1700 */
+
+    .pied {
+        position: absolute; bottom: 120px; left: 0; right: 0; text-align: center;
+        font-size: 24px; color: #8a7175; letter-spacing: 2px;
+    }
+    .pied b { color: #9c7a2e; }
+</style>
+</head>
+<body>
+<div class="story">
+    <div class="content">
+        <div class="marque">L'Instant Réel</div>
+        <div class="metier">Créatrice de contenu mariage</div>
+
+        <div class="bas">
+            <h1>Votre mariage<br>en <em>réels</em></h1>
+            <p class="sous">Reels &amp; TikTok livrés sous 48&nbsp;h</p>
+
+            <div class="collections">
+                <div class="col">
+                    <div class="nom">Intime</div>
+                    <div class="prix">240 €</div>
+                    <div class="det">4 h · 2 réels</div>
+                </div>
+                <div class="col star">
+                    <div class="nom">Signature</div>
+                    <div class="prix">480 €</div>
+                    <div class="det">8 h · 3 réels</div>
+                </div>
+                <div class="col">
+                    <div class="nom">Éternité</div>
+                    <div class="prix">720 €</div>
+                    <div class="det">12 h · 4 réels</div>
+                </div>
+            </div>
+
+            <p class="appel">Réservez votre <em>appel découverte</em></p>
+            <p class="fleche">Cliquez sur le lien<span>↓</span></p>
+        </div>
+
+        <p class="pied"><b>@linstant.reel</b> · Martinique · Guadeloupe · Partout dans le monde</p>
+    </div>
+</div>
+</body>
+</html>
