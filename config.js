@@ -14,7 +14,7 @@ const SITE = {
     // Laisse "" si tu ne veux pas utiliser l'un des deux.
     email: "chrysta.bd@gmail.com",
     whatsapp: "",           // ex : "596696123456" (indicatif sans le +, sans espaces)
-    instagram: "",          // ex : "https://instagram.com/linstantreel"
+    instagram: "https://instagram.com/linstant.reel",
 
     // Informations affichées sous les formules
     zones: "Martinique • Guadeloupe • Partout dans le monde",
