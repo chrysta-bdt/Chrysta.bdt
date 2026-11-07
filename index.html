@@ -1,44 +1,173 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Chrysta</title>
-        <meta charset="utf-8">
-        <script src="https://kit.fontawesome.com/e28f7594bb.js" crossorigin="anonymous"></script>
-        <link href="style.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <div class="container"> 
-            <div class = "card-white" id="introduction">
-                 <h1>Chrysta</h1>
-                <img src="image/profile.jpg" class="img-circle" width="250px" >
-                   <p>Bonjour je m'appelle Chrysta Bidoyet agée de 20 ans titulaire d'un bts en systéme numérique j'habite au lamentin .
-                      <br>J'ai mon permis B.
-                    <br> j'ai etais scolarisé à jopeph Gaillard pour mon bts 
-                <br>Actullement je suis en formation avec le wagon pour devenir developpeuse Web  </p>
-                    <a href="https://www.lewagon.com/"target="_blank"  class="btn-blue"> Le Wagon</a>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chrysta Bidoyet — Développeuse Web</title>
+    <meta name="description" content="Portfolio de Chrysta Bidoyet, développeuse web en formation au Wagon, basée au Lamentin (Martinique).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e28f7594bb.js" crossorigin="anonymous"></script>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="#accueil" class="logo">Chrysta<span>.</span></a>
+        <nav>
+            <a href="#a-propos">À propos</a>
+            <a href="#competences">Compétences</a>
+            <a href="#projets">Projets</a>
+            <a href="#parcours">Parcours</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Accueil -->
+        <section id="accueil" class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">Bonjour, je suis</p>
+                <h1>Chrysta Bidoyet</h1>
+                <h2>Développeuse Web en formation</h2>
+                <p class="lead">
+                    Titulaire d'un BTS Systèmes Numériques, je me forme au développement web
+                    avec Le Wagon. J'aime construire des sites simples, clairs et utiles.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projets" class="btn btn-primary">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-outline">Me contacter</a>
                 </div>
-             <div class="card-white">
-                <h2>Mes passions&#128214;</h2>
-                    <p>Dans la vie j'aime beaucoup lire,vendre aussi des pistaches,sinobol, etc.
-                       <br>J'aime aussi regarder les matchs de foot,j'apprécie aussi faire des petites soirées de jeux de société avec mes amies.
-                       <br>
+            </div>
+            <img src="image/profile.jpg" alt="Photo de Chrysta Bidoyet" class="hero-photo">
+        </section>
+
+        <!-- À propos -->
+        <section id="a-propos" class="section">
+            <h2 class="section-title">À propos</h2>
+            <div class="about-grid">
+                <div class="card">
+                    <p>
+                        J'ai 20 ans et j'habite au Lamentin, en Martinique. J'ai obtenu mon
+                        BTS Systèmes Numériques au lycée Joseph Gaillard, puis j'ai décidé de
+                        me tourner vers le développement web.
                     </p>
+                    <p>
+                        Je suis actuellement en formation au <strong>Wagon</strong> pour devenir
+                        développeuse web full-stack.
+                    </p>
+                    <ul class="facts">
+                        <li><i class="fas fa-map-marker-alt"></i> Le Lamentin, Martinique</li>
+                        <li><i class="fas fa-graduation-cap"></i> BTS Systèmes Numériques</li>
+                        <li><i class="fas fa-car"></i> Permis B</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Mes passions &#128214;</h3>
+                    <ul class="tags">
+                        <li>Lecture</li>
+                        <li>Football</li>
+                        <li>Jeux de société</li>
+                        <li>Vente (pistaches, sinobol…)</li>
+                    </ul>
+                    <p>
+                        J'aime regarder les matchs de foot et organiser de petites soirées
+                        jeux de société avec mes amies.
+                    </p>
+                </div>
             </div>
+        </section>
 
-            <div class= "card-white">
-        <h2>Réseaux Sociaux</h2>
-            <ul>
-              <li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
-              <li><a href="https://instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a></li>
-              <li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
-               </ul>
+        <!-- Compétences -->
+        <section id="competences" class="section">
+            <h2 class="section-title">Compétences</h2>
+            <div class="skills-grid">
+                <div class="card skill">
+                    <i class="fab fa-html5"></i>
+                    <h3>Front-end</h3>
+                    <p>HTML, CSS, JavaScript, design responsive</p>
+                </div>
+                <div class="card skill">
+                    <i class="fas fa-server"></i>
+                    <h3>Back-end</h3>
+                    <p>Ruby, Ruby on Rails, SQL <em>(en cours d'apprentissage)</em></p>
+                </div>
+                <div class="card skill">
+                    <i class="fab fa-git-alt"></i>
+                    <h3>Outils</h3>
+                    <p>Git, GitHub, terminal</p>
+                </div>
+                <div class="card skill">
+                    <i class="fas fa-microchip"></i>
+                    <h3>Systèmes numériques</h3>
+                    <p>Bases en informatique et réseaux (BTS SN)</p>
+                </div>
             </div>
+        </section>
 
+        <!-- Projets -->
+        <section id="projets" class="section">
+            <h2 class="section-title">Projets</h2>
+            <div class="projects-grid">
+                <article class="card project">
+                    <div class="project-thumb thumb-1"><i class="fas fa-user"></i></div>
+                    <h3>Mon portfolio</h3>
+                    <p>Ce site : une page personnelle responsive réalisée en HTML et CSS.</p>
+                    <div class="project-tags"><span>HTML</span><span>CSS</span></div>
+                    <a href="https://github.com/chrysta-bdt/Chrysta.bdt" target="_blank" rel="noopener" class="link">
+                        <i class="fab fa-github"></i> Code source
+                    </a>
+                </article>
+                <article class="card project upcoming">
+                    <div class="project-thumb thumb-2"><i class="fas fa-code"></i></div>
+                    <h3>Projet à venir</h3>
+                    <p>Un projet réalisé pendant la formation au Wagon sera bientôt ajouté ici.</p>
+                    <div class="project-tags"><span>JavaScript</span></div>
+                </article>
+                <article class="card project upcoming">
+                    <div class="project-thumb thumb-3"><i class="fas fa-gem"></i></div>
+                    <h3>Projet à venir</h3>
+                    <p>Application web full-stack réalisée en équipe en fin de formation.</p>
+                    <div class="project-tags"><span>Ruby on Rails</span></div>
+                </article>
             </div>
-        </div>
+        </section>
+
+        <!-- Parcours -->
+        <section id="parcours" class="section">
+            <h2 class="section-title">Parcours</h2>
+            <ol class="timeline">
+                <li>
+                    <span class="when">Aujourd'hui</span>
+                    <h3>Formation Développeuse Web — Le Wagon</h3>
+                    <p>Bootcamp intensif de développement web full-stack.</p>
+                    <a href="https://www.lewagon.com/" target="_blank" rel="noopener" class="link">lewagon.com</a>
+                </li>
+                <li>
+                    <span class="when">Diplômée</span>
+                    <h3>BTS Systèmes Numériques — Lycée Joseph Gaillard</h3>
+                    <p>Informatique, réseaux et électronique.</p>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="section contact">
+            <h2 class="section-title">Contact</h2>
+            <p>Une question, une opportunité de stage ou d'alternance ? N'hésitez pas à me contacter.</p>
+            <ul class="socials">
+                <li><a href="https://github.com/chrysta-bdt" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                <li><a href="https://twitter.com/" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
             </ul>
-    </body>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Chrysta Bidoyet — Fait avec <i class="fas fa-heart"></i> en Martinique</p>
+    </footer>
+
+</body>
 </html>
