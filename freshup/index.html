@@ -10,142 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
-<body>
+<body class="page-accueil">
     <header class="navbar">
-        <a href="#accueil" class="logo"><img src="img/logo-blanc.png" alt="Fresh Up"></a>
-        <nav>
-            <a href="#tarifs">Tarifs</a>
-            <a href="#zones">Zones</a>
-            <a href="#reserver" class="btn btn-small">Réserver</a>
-        </nav>
+        <a href="index.html" class="logo"><img src="img/logo-couleur.png" alt="Fresh Up"></a>
+        <a href="#" class="nav-tel" data-tel></a>
     </header>
 
-    <main>
-        <!-- ---------- Couverture ---------- -->
-        <section class="hero" id="accueil">
-            <video class="hero-video" id="hero-video" autoplay muted loop playsinline poster="img/hero-poster.jpg"></video>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <p class="eyebrow">Nettoyage à domicile · Martinique</p>
-                <h1>Canapés, matelas, tapis :<br><span>on les nettoie en profondeur.</span></h1>
-                <p class="lead">On ne te vend pas d'aspirateur. On vient chez toi avec notre matériel pro et on sort la saleté que tu ne vois pas.</p>
-                <div class="hero-actions">
-                    <a href="#tarifs" class="btn">Voir les prix et estimer</a>
-                    <a href="#" class="btn btn-ghost" data-whatsapp>WhatsApp</a>
-                </div>
-                <ul class="hero-points">
-                    <li>Partout en Martinique</li>
-                    <li>Prix affichés</li>
-                    <li>Rien à payer en ligne</li>
-                </ul>
+    <main class="accueil">
+        <div class="accueil-texte">
+            <p class="eyebrow">Nettoyage à domicile · Martinique</p>
+            <h1>Ta couleur préférée,<br><span>c'est le propre.</span></h1>
+            <p class="lead">Canapés, matelas, tapis : on les nettoie en profondeur, chez toi. Fais glisser pour voir la différence.</p>
+        </div>
+
+        <div class="avant-apres" id="avant-apres" aria-label="Avant et après nettoyage">
+            <div class="aa-couche aa-avant" id="aa-avant"></div>
+            <div class="aa-couche aa-apres" id="aa-apres"></div>
+            <span class="aa-label aa-label-avant">Avant</span>
+            <span class="aa-label aa-label-apres">Après</span>
+            <div class="aa-ligne" id="aa-ligne">
+                <button type="button" class="aa-poignee" id="aa-poignee" role="slider" aria-label="Faire glisser avant / après" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 6l-6 6 6 6M15 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
             </div>
-            <a href="#tarifs" class="hero-scroll" aria-label="Descendre vers les tarifs"></a>
-        </section>
+        </div>
 
-        <!-- ---------- Tarifs et estimation ---------- -->
-        <section class="section" id="tarifs">
-            <p class="eyebrow">Tarifs TTC</p>
-            <h2 class="section-title">Choisis ce qu'on nettoie, <span>vois ton prix.</span></h2>
-            <p class="section-sub">Ajoute tes canapés, matelas ou tapis : le prix estimé se calcule tout seul.</p>
-
-            <div class="tabs" role="tablist" id="onglets"></div>
-
-            <div class="tarifs-layout">
-                <div id="rubriques"></div>
-
-                <aside class="estimation" id="estimation">
-                    <h3>Ton estimation</h3>
-                    <ul class="estim-lignes" id="estim-lignes"></ul>
-                    <label class="champ">
-                        <span>Ta commune (frais de déplacement)</span>
-                        <select id="commune"></select>
-                    </label>
-                    <div class="estim-total">
-                        <span>Total estimé</span>
-                        <strong id="estim-total">—</strong>
-                    </div>
-                    <p class="estim-note" id="estim-note"></p>
-                    <a href="#reserver" class="btn btn-block" id="btn-reserver">Réserver ce nettoyage</a>
-                    <p class="estim-paiement" data-paiement></p>
-                </aside>
-            </div>
-        </section>
-
-        <!-- ---------- Preuve ---------- -->
-        <section class="section preuve">
-            <div class="preuve-texte">
-                <p class="eyebrow">La preuve</p>
-                <h2 class="section-title">Voilà ce que ton aspirateur <span>laisse dans le tissu.</span></h2>
-                <p>Poussière, sueur, acariens, taches : tout s'accumule au fond des fibres sans qu'on le voie. Notre machine injecte un produit de nettoyage puis aspire tout. Le résultat finit dans le bac.</p>
-            </div>
-            <video class="preuve-video" src="video/eau-sale.mp4" poster="img/eau-sale-poster.jpg" autoplay muted loop playsinline></video>
-        </section>
-
-        <!-- ---------- Galerie ---------- -->
-        <section class="section">
-            <p class="eyebrow">Sur le terrain</p>
-            <h2 class="section-title">Nos <span>interventions</span></h2>
-            <div class="galerie">
-                <img src="img/photo-1.jpg" alt="Canapé d'angle gris" loading="lazy">
-                <img src="img/photo-2.jpg" alt="Canapé gris trois places" loading="lazy">
-                <img src="img/photo-3.jpg" alt="Canapé marron chez un client" loading="lazy">
-                <img src="img/photo-4.jpg" alt="Canapé marron chez un client" loading="lazy">
-                <img src="img/photo-5.jpg" alt="Nettoyage d'un matelas" loading="lazy">
-                <img src="img/photo-6.jpg" alt="Nettoyage d'un canapé gris" loading="lazy">
-            </div>
-        </section>
-
-        <!-- ---------- Comment ça marche ---------- -->
-        <section class="section">
-            <p class="eyebrow">Simple</p>
-            <h2 class="section-title">Comment <span>ça se passe</span></h2>
-            <ol class="etapes">
-                <li><strong>Tu estimes ton prix</strong>Choisis ce qu'il faut nettoyer et ta commune.</li>
-                <li><strong>Tu réserves</strong>Choisis ton jour et ton heure dans l'agenda, ou écris-nous sur WhatsApp.</li>
-                <li><strong>On vient chez toi</strong>Avec tout le matériel. Tu règles sur place, après la prestation.</li>
-            </ol>
-        </section>
-
-        <!-- ---------- Zones ---------- -->
-        <section class="section" id="zones">
-            <p class="eyebrow">Service à domicile, entièrement équipé</p>
-            <h2 class="section-title">Déplacement <span>sur toute l'île</span></h2>
-            <div class="zones-grid" id="zones-grid"></div>
-        </section>
-
-        <!-- ---------- Réservation ---------- -->
-        <section class="section reserver" id="reserver">
-            <p class="eyebrow">Réservation</p>
-            <h2 class="section-title">Réserve <span>ton créneau</span></h2>
-            <p class="section-sub">Remplis tes infos, puis choisis ton jour et ton heure dans l'agenda. Rien à payer maintenant : le prix est confirmé sur place et tu règles après la prestation.</p>
-
-            <form class="card form-rdv" id="form-rdv">
-                <div class="recap" id="recap"></div>
-                <div class="form-grid">
-                    <label class="champ"><span>Prénom et nom</span><input name="nom" required autocomplete="name"></label>
-                    <label class="champ"><span>Téléphone</span><input name="tel" type="tel" required autocomplete="tel"></label>
-                    <label class="champ"><span>Commune</span><select name="commune" id="commune-form" required></select></label>
-                    <label class="champ"><span>Quartier / adresse</span><input name="adresse" autocomplete="street-address"></label>
-                    <label class="champ champ-large"><span>Précisions (taches, matière, étage…)</span><textarea name="message" rows="3"></textarea></label>
-                </div>
-                <p class="form-erreur" id="form-erreur"></p>
-                <a href="#" class="btn btn-block" data-action="calendly" target="_blank" rel="noopener">Choisir mon jour et mon heure</a>
-                <a href="#" class="btn btn-ghost btn-block" data-action="whatsapp" target="_blank" rel="noopener">Ou envoyer ma demande sur WhatsApp</a>
-                <p class="estim-paiement" data-paiement></p>
-            </form>
-        </section>
+        <div class="choix">
+            <p class="choix-titre">Je veux nettoyer…</p>
+            <div class="choix-boutons" id="choix-boutons"></div>
+            <p class="choix-info" data-paiement></p>
+        </div>
     </main>
 
-    <!-- Barre d'estimation sur mobile -->
-    <div class="barre-mobile" id="barre-mobile">
-        <div><span>Total estimé</span><strong id="barre-total">—</strong></div>
-        <a href="#reserver" class="btn btn-small">Réserver</a>
-    </div>
-
     <footer class="footer">
-        <img src="img/logo-blanc.png" alt="Fresh Up" class="footer-logo">
         <p id="footer-links"></p>
-        <p class="footer-small">Nettoyage de canapés, matelas, tapis et moquettes à domicile · Martinique</p>
     </footer>
 
     <script src="config.js"></script>

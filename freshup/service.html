@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tarifs et réservation — Fresh Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body class="page-service">
+    <header class="navbar">
+        <a href="index.html" class="retour">&larr; Accueil</a>
+        <a href="index.html" class="logo"><img src="img/logo-couleur.png" alt="Fresh Up"></a>
+        <a href="#" class="nav-tel" data-tel></a>
+    </header>
+
+    <main class="service">
+        <nav class="pills" id="pills" aria-label="Choisir ce qu'on nettoie"></nav>
+
+        <div class="service-grid">
+            <section class="service-tarifs">
+                <div class="service-entete">
+                    <img id="s-photo" alt="">
+                    <div>
+                        <h1 id="s-nom"></h1>
+                        <p id="s-inclus"></p>
+                    </div>
+                </div>
+                <p class="consigne">Ajoute ce que tu veux faire nettoyer avec <strong>+</strong>. Tu peux mélanger canapé, matelas et tapis.</p>
+                <ul class="prestations" id="s-prestations"></ul>
+            </section>
+
+            <aside class="carte" id="reserver">
+                <h2>Ton estimation</h2>
+                <ul class="estim-lignes" id="estim-lignes"></ul>
+                <label class="champ">
+                    <span>Ta commune</span>
+                    <select id="commune" name="commune" form="form-rdv" required></select>
+                </label>
+                <div class="estim-total">
+                    <span>Total estimé TTC</span>
+                    <strong id="estim-total">—</strong>
+                </div>
+                <p class="estim-note" id="estim-note"></p>
+
+                <form id="form-rdv" class="form-rdv">
+                    <label class="champ"><span>Prénom et nom</span><input name="nom" required autocomplete="name"></label>
+                    <label class="champ"><span>Téléphone</span><input name="tel" type="tel" required autocomplete="tel"></label>
+                    <label class="champ"><span>Quartier / adresse</span><input name="adresse" autocomplete="street-address"></label>
+                    <label class="champ"><span>Précisions (taches, matière, étage…)</span><textarea name="message" rows="2"></textarea></label>
+                    <p class="form-erreur" id="form-erreur"></p>
+                    <a href="#" class="btn btn-block" data-action="calendly" target="_blank" rel="noopener">Réserver mon créneau</a>
+                    <a href="#" class="btn btn-ligne btn-block" data-action="whatsapp" target="_blank" rel="noopener">Ou par WhatsApp</a>
+                </form>
+                <p class="estim-paiement" data-paiement></p>
+            </aside>
+        </div>
+    </main>
+
+    <div class="barre-mobile" id="barre-mobile">
+        <div><span>Total estimé</span><strong id="barre-total">—</strong></div>
+        <a href="#reserver" class="btn btn-small">Réserver</a>
+    </div>
+
+    <footer class="footer">
+        <p id="footer-links"></p>
+    </footer>
+
+    <script src="config.js"></script>
+    <script src="site.js"></script>
+</body>
+</html>

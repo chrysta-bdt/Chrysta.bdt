@@ -16,27 +16,29 @@ const SITE = {
     // Si tu le laisses vide (""), la réservation se fait uniquement par WhatsApp.
     rdv: "https://calendly.com/freshup-mq",
 
-    paiement: "Paiement sur place, après la prestation : carte ou espèces.",
+    paiement: "Rien à payer en ligne. Tu règles sur place, après la prestation : carte ou espèces.",
+
+    // Photos de l'avant / après de la page d'accueil (même cadrage)
+    avant: "img/canape-sale.webp",
+    apres: "img/canape-propre.webp",
 };
 
-/*  Les rubriques (onglets) et leurs prestations.
+/*  Les rubriques et leurs prestations.
     Pour chaque prestation :
         nom   = ce qui est affiché
         prix  = le prix TTC en euros (null = sur devis)
         unite = (facultatif) "m²" si le prix est au mètre carré
         aPartirDe = (facultatif) true si c'est un prix de départ
+        supplement = (facultatif) true pour une option qui s'ajoute
 */
 const RUBRIQUES = [
     {
         id: "canapes",
+        bouton: "Mon canapé",
+        prixAccueil: 79, // prix affiché sur le bouton de l'accueil ("dès 79 €")
         nom: "Canapés & fauteuils",
-        titre: "Lavage de canapés et fauteuils",
         photo: "img/photo-6.jpg",
-        inclus: [
-            "Nettoyage en profondeur par injection-extraction",
-            "Détachage et élimination des mauvaises odeurs",
-            "Poussière et acariens extraits du tissu",
-        ],
+        inclus: "Injection-extraction en profondeur, détachage, odeurs, poussière et acariens.",
         prestations: [
             { id: "fauteuil", nom: "Fauteuil individuel", prix: 39 },
             { id: "canape-2", nom: "Canapé 2 places", prix: 79 },
@@ -48,32 +50,26 @@ const RUBRIQUES = [
     },
     {
         id: "matelas",
+        bouton: "Mon matelas",
+        prixAccueil: 45,
         nom: "Matelas",
-        titre: "Lavage de matelas",
         photo: "img/photo-5.jpg",
-        inclus: [
-            "Nettoyage en profondeur par injection-extraction",
-            "Traitement anti-acariens",
-            "Taches, auréoles et odeurs",
-        ],
+        inclus: "Injection-extraction en profondeur, traitement anti-acariens, taches, auréoles et odeurs.",
         prestations: [
             { id: "matelas-enfant", nom: "Matelas enfant", prix: 45 },
             { id: "matelas-1", nom: "Matelas 1 place", prix: 59 },
             { id: "matelas-2", nom: "Matelas 2 places", prix: 79 },
             { id: "matelas-king", nom: "Matelas King Size", prix: 89 },
-            { id: "matelas-face", nom: "Nettoyage de la deuxième face (par matelas)", prix: 25, supplement: true },
+            { id: "matelas-face", nom: "Deuxième face (par matelas)", prix: 25, supplement: true },
         ],
     },
     {
         id: "tapis",
+        bouton: "Mon tapis",
+        prixAccueil: 49,
         nom: "Tapis & moquettes",
-        titre: "Lavage de tapis et moquettes",
         photo: "img/tapis.jpg",
-        inclus: [
-            "Shampoing et extraction des saletés",
-            "Traitement anti-taches et désodorisant",
-            "Fibres ravivées, séchage rapide",
-        ],
+        inclus: "Shampoing et extraction des saletés, traitement anti-taches et désodorisant.",
         prestations: [
             { id: "tapis-2", nom: "Tapis jusqu'à 2 m²", prix: 49 },
             { id: "tapis-4", nom: "Tapis de 2 à 4 m²", prix: 69 },
@@ -88,8 +84,8 @@ const RUBRIQUES = [
     Pour changer une commune de zone, déplace-la dans la bonne liste.
 */
 const ZONES = [
-    { nom: "Zone 4", frais: 5, couleur: "#F7931E", communes: ["Fort-de-France", "Le Lamentin", "Saint-Joseph", "Schœlcher"] },
-    { nom: "Zone 1", frais: 10, couleur: "#2EAD4B", communes: ["Bellefontaine", "Case-Pilote", "Ducos", "Le Gros-Morne", "Le Robert"] },
-    { nom: "Zone 2", frais: 13, couleur: "#2F4FD8", communes: ["Fonds-Saint-Denis", "La Trinité", "Le Carbet", "Le François", "Le Morne-Rouge", "Le Morne-Vert", "Rivière-Salée", "Saint-Esprit", "Sainte-Luce", "Sainte-Marie"] },
-    { nom: "Zone 3", frais: 15, couleur: "#E8318C", communes: ["Ajoupa-Bouillon", "Basse-Pointe", "Grand'Rivière", "Le Diamant", "Le Lorrain", "Le Marigot", "Le Marin", "Le Prêcheur", "Le Vauclin", "Les Anses-d'Arlet", "Les Trois-Îlets", "Macouba", "Rivière-Pilote", "Saint-Pierre", "Sainte-Anne"] },
+    { nom: "Zone 4", frais: 5, communes: ["Fort-de-France", "Le Lamentin", "Saint-Joseph", "Schœlcher"] },
+    { nom: "Zone 1", frais: 10, communes: ["Bellefontaine", "Case-Pilote", "Ducos", "Le Gros-Morne", "Le Robert"] },
+    { nom: "Zone 2", frais: 13, communes: ["Fonds-Saint-Denis", "La Trinité", "Le Carbet", "Le François", "Le Morne-Rouge", "Le Morne-Vert", "Rivière-Salée", "Saint-Esprit", "Sainte-Luce", "Sainte-Marie"] },
+    { nom: "Zone 3", frais: 15, communes: ["Ajoupa-Bouillon", "Basse-Pointe", "Grand'Rivière", "Le Diamant", "Le Lorrain", "Le Marigot", "Le Marin", "Le Prêcheur", "Le Vauclin", "Les Anses-d'Arlet", "Les Trois-Îlets", "Macouba", "Rivière-Pilote", "Saint-Pierre", "Sainte-Anne"] },
 ];
