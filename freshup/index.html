@@ -101,7 +101,7 @@
             <h2 class="section-title">Comment <span>ça se passe</span></h2>
             <ol class="etapes">
                 <li><strong>Tu estimes ton prix</strong>Choisis ce qu'il faut nettoyer et ta commune.</li>
-                <li><strong>Tu réserves</strong>Indique le jour et le moment qui t'arrangent. On te confirme le rendez-vous.</li>
+                <li><strong>Tu réserves</strong>Choisis ton jour et ton heure dans l'agenda, ou écris-nous sur WhatsApp.</li>
                 <li><strong>On vient chez toi</strong>Avec tout le matériel. Tu règles sur place, après la prestation.</li>
             </ol>
         </section>
@@ -117,7 +117,7 @@
         <section class="section reserver" id="reserver">
             <p class="eyebrow">Réservation</p>
             <h2 class="section-title">Réserve <span>ton créneau</span></h2>
-            <p class="section-sub">Rien à payer maintenant. Le prix est confirmé sur place selon la taille et l'état, et tu règles après la prestation.</p>
+            <p class="section-sub">Remplis tes infos, puis choisis ton jour et ton heure dans l'agenda. Rien à payer maintenant : le prix est confirmé sur place et tu règles après la prestation.</p>
 
             <form class="card form-rdv" id="form-rdv">
                 <div class="recap" id="recap"></div>
@@ -126,19 +126,11 @@
                     <label class="champ"><span>Téléphone</span><input name="tel" type="tel" required autocomplete="tel"></label>
                     <label class="champ"><span>Commune</span><select name="commune" id="commune-form" required></select></label>
                     <label class="champ"><span>Quartier / adresse</span><input name="adresse" autocomplete="street-address"></label>
-                    <label class="champ"><span>Jour souhaité</span><input name="date" type="date" id="date-rdv" required></label>
-                    <label class="champ"><span>Moment</span>
-                        <select name="moment" required>
-                            <option value="Matin">Matin</option>
-                            <option value="Après-midi">Après-midi</option>
-                            <option value="Peu importe">Peu importe</option>
-                        </select>
-                    </label>
                     <label class="champ champ-large"><span>Précisions (taches, matière, étage…)</span><textarea name="message" rows="3"></textarea></label>
                 </div>
                 <p class="form-erreur" id="form-erreur"></p>
-                <button type="submit" class="btn btn-block">Envoyer ma demande sur WhatsApp</button>
-                <a href="#" class="btn btn-ghost btn-block" data-rdv target="_blank" rel="noopener">Choisir un créneau en ligne</a>
+                <button type="submit" class="btn btn-block" data-action="calendly">Choisir mon jour et mon heure</button>
+                <button type="submit" class="btn btn-ghost btn-block" data-action="whatsapp">Ou envoyer ma demande sur WhatsApp</button>
                 <p class="estim-paiement" data-paiement></p>
             </form>
         </section>

@@ -191,6 +191,23 @@ function lienWhatsApp(texte) {
     return `https://wa.me/${SITE.whatsapp}` + (texte ? `?text=${encodeURIComponent(texte)}` : "");
 }
 
+/* Le récapitulatif de la demande, utilisé pour WhatsApp et pour les notes du rendez-vous Calendly. */
+function texteDemande(f, e) {
+    return [
+        ...e.lignes.map((l) => `• ${l.texte} : ${l.montant}`),
+        e.lignes.length ? `Total estimé : ${document.getElementById("estim-total").textContent}` : "",
+        "",
+        `Téléphone : ${f.get("tel")}`,
+        `Commune : ${f.get("commune")}${f.get("adresse") ? " (" + f.get("adresse") + ")" : ""}`,
+        f.get("message") ? `Précisions : ${f.get("message")}` : "",
+        "",
+        "Paiement sur place après la prestation.",
+    ]
+        .filter((ligne, i, tout) => ligne !== "" || (i > 0 && tout[i - 1] !== ""))
+        .join("\n")
+        .trim();
+}
+
 function envoyerDemande(evenement) {
     evenement.preventDefault();
     const f = new FormData(evenement.target);
@@ -202,38 +219,39 @@ function envoyerDemande(evenement) {
     }
     erreur.textContent = "";
 
-    const date = f.get("date") ? new Date(f.get("date") + "T12:00").toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long" }) : "";
+    const action = evenement.submitter ? evenement.submitter.dataset.action : "whatsapp";
+    if (action === "calendly" && SITE.rdv) {
+        const url = new URL(SITE.rdv);
+        url.searchParams.set("name", f.get("nom"));
+        url.searchParams.set("a1", texteDemande(f, e));
+        window.open(url.toString(), "_blank", "noopener");
+        return;
+    }
+
     const message = [
         "Bonjour Fresh Up, je souhaite réserver un nettoyage.",
         "",
-        ...e.lignes.map((l) => `• ${l.texte} : ${l.montant}`),
-        e.lignes.length ? `Total estimé : ${document.getElementById("estim-total").textContent}` : "",
-        "",
         `Nom : ${f.get("nom")}`,
-        `Téléphone : ${f.get("tel")}`,
-        `Commune : ${f.get("commune")}${f.get("adresse") ? " (" + f.get("adresse") + ")" : ""}`,
-        `Jour souhaité : ${date} — ${f.get("moment")}`,
-        f.get("message") ? `Précisions : ${f.get("message")}` : "",
+        texteDemande(f, e),
         "",
-        "Paiement sur place après la prestation.",
-    ]
-        .filter((ligne, i, tout) => ligne !== "" || tout[i - 1] !== "")
-        .join("\n");
-
+        "Quels créneaux avez-vous de disponibles ?",
+    ].join("\n");
     window.open(lienWhatsApp(message), "_blank", "noopener");
 }
 
 function initReservation() {
-    const demain = new Date();
-    demain.setDate(demain.getDate() + 1);
-    const champDate = document.getElementById("date-rdv");
-    champDate.min = demain.toISOString().slice(0, 10);
-
     document.getElementById("form-rdv").addEventListener("submit", envoyerDemande);
-    document.querySelectorAll("[data-rdv]").forEach((el) => {
-        if (SITE.rdv) el.href = SITE.rdv;
-        else el.remove();
-    });
+    // La barre du bas sur mobile ne doit pas cacher le formulaire
+    new IntersectionObserver(([entree]) =>
+        document.getElementById("barre-mobile").classList.toggle("masquee", entree.isIntersecting)
+    ).observe(document.getElementById("reserver"));
+    // Sans lien d'agenda, la réservation se fait uniquement par WhatsApp
+    if (!SITE.rdv) {
+        document.querySelector('[data-action="calendly"]').remove();
+        const whatsapp = document.querySelector('[data-action="whatsapp"]');
+        whatsapp.classList.remove("btn-ghost");
+        whatsapp.textContent = "Envoyer ma demande sur WhatsApp";
+    }
 }
 
 /* ---------- Commun ---------- */

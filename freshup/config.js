@@ -12,9 +12,9 @@ const SITE = {
     whatsapp: "596696102177",
     instagram: "https://instagram.com/freshup.mq",
 
-    // Lien Calendly (ou autre) pour réserver directement un créneau.
-    // Laisse "" tant que tu n'as pas le bon lien : la réservation se fait alors par WhatsApp.
-    rdv: "",
+    // Lien Calendly pour réserver directement un créneau.
+    // Si tu le laisses vide (""), la réservation se fait uniquement par WhatsApp.
+    rdv: "https://calendly.com/freshup-mq",
 
     paiement: "Paiement sur place, après la prestation : carte ou espèces.",
 };
