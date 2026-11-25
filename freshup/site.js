@@ -156,6 +156,7 @@ function majEstimation() {
         : `<p class="recap-titre">Ta demande</p>
            <ul>${e.lignes.map((l) => `<li><span>${echapper(l.texte)}</span><span>${echapper(l.montant)}</span></li>`).join("")}</ul>
            <p class="recap-total"><span>Total estimé</span><strong>${echapper(totalTexte)}</strong></p>`;
+    majLiensReservation();
 }
 
 /* ---------- Communes et zones ---------- */
@@ -208,24 +209,19 @@ function texteDemande(f, e) {
         .trim();
 }
 
-function envoyerDemande(evenement) {
-    evenement.preventDefault();
-    const f = new FormData(evenement.target);
+/* Les boutons de réservation sont de vrais liens, mis à jour à chaque changement :
+   plus fiable qu'une fenêtre ouverte par script, que certains navigateurs bloquent. */
+function majLiensReservation() {
+    const form = document.getElementById("form-rdv");
+    const f = new FormData(form);
     const e = calculer();
-    const erreur = document.getElementById("form-erreur");
-    if (!e.lignes.length && !String(f.get("message")).trim()) {
-        erreur.textContent = "Ajoute au moins une prestation dans l'estimation, ou décris ton besoin dans les précisions.";
-        return;
-    }
-    erreur.textContent = "";
 
-    const action = evenement.submitter ? evenement.submitter.dataset.action : "whatsapp";
-    if (action === "calendly" && SITE.rdv) {
+    const calendly = form.querySelector('[data-action="calendly"]');
+    if (calendly) {
         const url = new URL(SITE.rdv);
-        url.searchParams.set("name", f.get("nom"));
+        if (f.get("nom")) url.searchParams.set("name", f.get("nom"));
         url.searchParams.set("a1", texteDemande(f, e));
-        window.open(url.toString(), "_blank", "noopener");
-        return;
+        calendly.href = url.toString();
     }
 
     const message = [
@@ -236,11 +232,32 @@ function envoyerDemande(evenement) {
         "",
         "Quels créneaux avez-vous de disponibles ?",
     ].join("\n");
-    window.open(lienWhatsApp(message), "_blank", "noopener");
+    form.querySelector('[data-action="whatsapp"]').href = lienWhatsApp(message);
+}
+
+function verifierDemande(evenement) {
+    const form = document.getElementById("form-rdv");
+    const erreur = document.getElementById("form-erreur");
+    if (!form.reportValidity()) {
+        evenement.preventDefault();
+        erreur.textContent = "Remplis ton nom, ton téléphone et ta commune.";
+        return;
+    }
+    if (!calculer().lignes.length && !String(new FormData(form).get("message")).trim()) {
+        evenement.preventDefault();
+        erreur.textContent = "Ajoute au moins une prestation dans l'estimation, ou décris ton besoin dans les précisions.";
+        return;
+    }
+    erreur.textContent = "";
+    majLiensReservation();
 }
 
 function initReservation() {
-    document.getElementById("form-rdv").addEventListener("submit", envoyerDemande);
+    const form = document.getElementById("form-rdv");
+    form.addEventListener("submit", (e) => e.preventDefault());
+    form.addEventListener("input", majLiensReservation);
+    form.addEventListener("change", majLiensReservation);
+    form.querySelectorAll("[data-action]").forEach((lien) => lien.addEventListener("click", verifierDemande));
     // La barre du bas sur mobile ne doit pas cacher le formulaire
     new IntersectionObserver(([entree]) =>
         document.getElementById("barre-mobile").classList.toggle("masquee", entree.isIntersecting)
