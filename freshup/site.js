@@ -32,8 +32,8 @@ function initCommun() {
     });
     document.querySelectorAll("[data-paiement]").forEach((el) => (el.textContent = SITE.paiement));
     const liens = [
-        `<a href="${lienWhatsApp("Bonjour Fresh Up, je voudrais un renseignement.")}" target="_blank" rel="noopener">WhatsApp ${echapper(SITE.telephone)}</a>`,
-        `<a href="${SITE.instagram}" target="_blank" rel="noopener">Instagram @freshup.mq</a>`,
+        `<a href="${lienWhatsApp("Bonjour Fresh Up, je voudrais un renseignement.")}">WhatsApp ${echapper(SITE.telephone)}</a>`,
+        `<a href="${SITE.instagram}">Instagram @freshup.mq</a>`,
         "Partout en Martinique",
     ];
     document.getElementById("footer-links").innerHTML = liens.join(" · ");
@@ -267,6 +267,7 @@ function verifierDemande(evenement) {
     }
     erreur.textContent = "";
     majLiensReservation();
+    document.getElementById("secours").hidden = false;
 }
 
 function initReservation() {

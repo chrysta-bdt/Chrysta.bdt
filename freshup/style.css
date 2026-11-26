@@ -179,6 +179,8 @@ h1, h2, .eyebrow, .btn, .choix-nom, .pill, .estim-total strong, .barre-mobile st
 .form-rdv .btn-block { margin-top: 0; }
 .form-erreur { color: #C62828; font-size: 14px; }
 .form-erreur:empty { display: none; }
+.secours { font-size: 13px; color: var(--marine); background: var(--cyan-doux); border-radius: 10px; padding: 10px 12px; margin-top: 12px; }
+.secours a { font-weight: 600; white-space: nowrap; }
 .estim-paiement { font-size: 13px; color: var(--gris); text-align: center; margin-top: 14px; }
 
 input, select, textarea {
